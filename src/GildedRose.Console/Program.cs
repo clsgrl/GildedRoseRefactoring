@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace GildedRose.Console
 {
@@ -45,7 +46,16 @@ namespace GildedRose.Console
                     {
                         if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
                         {
-                            Items[i].Quality = Items[i].Quality - 1;
+                            //added quality decreasing for "Conjured Nana Cake"
+                            if (Items[i].Name == "Conjured Mana Cake")
+                            {
+                                int newQuality = Items[i].Quality - 2;
+                                Items[i].Quality = Math.Max(0, newQuality);
+                            }
+                            else
+                            {
+                                Items[i].Quality = Items[i].Quality - 1;
+                            }
                         }
                     }
                 }
@@ -91,7 +101,16 @@ namespace GildedRose.Console
                             {
                                 if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
                                 {
-                                    Items[i].Quality = Items[i].Quality - 1;
+                                    //added quality decreasing for "Conjured Nana Cake"
+                                    if (Items[i].Name == "Conjured Mana Cake")
+                                    {
+                                        int newQuality = Items[i].Quality - 2;
+                                        Items[i].Quality = Math.Max(0, newQuality);
+                                    }
+                                    else
+                                    {
+                                        Items[i].Quality = Items[i].Quality - 1;
+                                    }
                                 }
                             }
                         }

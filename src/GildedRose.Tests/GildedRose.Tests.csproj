@@ -60,6 +60,7 @@
     <Compile Include="AgedBrieTest.cs" />
     <Compile Include="BackstagePassesTest.cs" />
     <Compile Include="BaseTest.cs" />
+    <Compile Include="ConjuredTest.cs" />
     <Compile Include="GenericItemTest.cs" />
     <Compile Include="GenericTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
