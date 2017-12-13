@@ -12,7 +12,7 @@ namespace GildedRose.Tests
         {
             Program program = getProgram();
 
-            program.Items =  new List<Item> { new Item { Name = BACKSTAGE_PASSES, SellIn = sellIn, Quality = initQuality } };
+            program.Items = new List<Item> { new Item { Name = GlobalConstants.ProductTypes.BACKSTAGE_PASSES, SellIn = sellIn, Quality = initQuality } };
 
             program.UpdateQuality();
 
@@ -64,13 +64,13 @@ namespace GildedRose.Tests
         [Fact]
         public void QualityIncreaseNotAbove50()
         {
-            Item changedItem11 = performTest(11, MAX_QUALITY);
-            Item changedItem10 = performTest(10, MAX_QUALITY);
-            Item changedItem5 = performTest(5, MAX_QUALITY);
+            Item changedItem11 = performTest(11, GlobalConstants.Limits.MAX_QUALITY);
+            Item changedItem10 = performTest(10, GlobalConstants.Limits.MAX_QUALITY);
+            Item changedItem5 = performTest(5, GlobalConstants.Limits.MAX_QUALITY);
 
-            Assert.Equal(MAX_QUALITY, changedItem11.Quality);
-            Assert.Equal(MAX_QUALITY, changedItem10.Quality);
-            Assert.Equal(MAX_QUALITY, changedItem5.Quality);
+            Assert.Equal(GlobalConstants.Limits.MAX_QUALITY, changedItem11.Quality);
+            Assert.Equal(GlobalConstants.Limits.MAX_QUALITY, changedItem10.Quality);
+            Assert.Equal(GlobalConstants.Limits.MAX_QUALITY, changedItem5.Quality);
         }
 
     }

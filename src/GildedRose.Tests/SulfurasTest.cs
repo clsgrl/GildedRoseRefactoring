@@ -15,7 +15,7 @@ namespace GildedRose.Tests
         {
             Program program = getProgram();
 
-            program.Items = new List<Item> { new Item { Name = SULFURAS, SellIn = defaultSellin, Quality = defaultQuality } };
+            program.Items = new List<Item> { new Item { Name = GlobalConstants.ProductTypes.SULFURAS, SellIn = defaultSellin, Quality = defaultQuality } };
 
             program.UpdateQuality();
 

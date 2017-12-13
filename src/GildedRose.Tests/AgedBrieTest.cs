@@ -13,7 +13,7 @@ namespace GildedRose.Tests
             Program program = getProgram();
 
             int initQuality = 1;
-            program.Items = new List<Item> { new Item { Name = AGED_BRIE, SellIn = 1, Quality = initQuality } };
+            program.Items = new List<Item> { new Item { Name = GlobalConstants.ProductTypes.AGED_BRIE, SellIn = 1, Quality = initQuality } };
 
             program.UpdateQuality();
 
@@ -28,16 +28,16 @@ namespace GildedRose.Tests
             Program program = getProgram();
             
             program.Items = new List<Item> { 
-                new Item { Name = AGED_BRIE, SellIn = 20, Quality = MAX_QUALITY },
-                new Item { Name = AGED_BRIE, SellIn = 0, Quality = MAX_QUALITY },
-                new Item { Name = AGED_BRIE, SellIn = -10, Quality = MAX_QUALITY }
+                new Item { Name = GlobalConstants.ProductTypes.AGED_BRIE, SellIn = 20, Quality = GlobalConstants.Limits.MAX_QUALITY },
+                new Item { Name = GlobalConstants.ProductTypes.AGED_BRIE, SellIn = 0, Quality = GlobalConstants.Limits.MAX_QUALITY },
+                new Item { Name = GlobalConstants.ProductTypes.AGED_BRIE, SellIn = -10, Quality = GlobalConstants.Limits.MAX_QUALITY }
             };
 
             program.UpdateQuality();
 
             foreach (Item item in program.Items)
             {
-                Assert.Equal(MAX_QUALITY, item.Quality);
+                Assert.Equal(GlobalConstants.Limits.MAX_QUALITY, item.Quality);
             }
         }
 
@@ -48,8 +48,8 @@ namespace GildedRose.Tests
 
             int initQuality = 2;
             program.Items = new List<Item> { 
-                new Item { Name = AGED_BRIE, SellIn = 0, Quality = initQuality },
-                new Item { Name = AGED_BRIE, SellIn = -2, Quality = initQuality } 
+                new Item { Name = GlobalConstants.ProductTypes.AGED_BRIE, SellIn = 0, Quality = initQuality },
+                new Item { Name = GlobalConstants.ProductTypes.AGED_BRIE, SellIn = -2, Quality = initQuality } 
             };
 
             program.UpdateQuality();

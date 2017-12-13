@@ -15,17 +15,17 @@ namespace GildedRose.Console
                           {
                               Items = new List<Item>
                                           {
-                                              new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
-                                              new Item {Name = "Aged Brie", SellIn = 2, Quality = 0},
-                                              new Item {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7},
-                                              new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
+                                              new Item {Name = GlobalConstants.ProductTypes.DEXTERITY_VEST, SellIn = 10, Quality = 20},
+                                              new Item {Name = GlobalConstants.ProductTypes.AGED_BRIE, SellIn = 2, Quality = 0},
+                                              new Item {Name = GlobalConstants.ProductTypes.ELIXIR_MONGOOSE, SellIn = 5, Quality = 7},
+                                              new Item {Name = GlobalConstants.ProductTypes.SULFURAS, SellIn = 0, Quality = 80},
                                               new Item
                                                   {
-                                                      Name = "Backstage passes to a TAFKAL80ETC concert",
+                                                      Name = GlobalConstants.ProductTypes.BACKSTAGE_PASSES,
                                                       SellIn = 15,
                                                       Quality = 20
                                                   },
-                                              new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
+                                              new Item {Name = GlobalConstants.ProductTypes.CONJURED, SellIn = 3, Quality = 6}
                                           }
 
                           };
@@ -40,14 +40,14 @@ namespace GildedRose.Console
         {
             for (var i = 0; i < Items.Count; i++)
             {
-                if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
+                if (Items[i].Name != GlobalConstants.ProductTypes.AGED_BRIE && Items[i].Name != GlobalConstants.ProductTypes.BACKSTAGE_PASSES)
                 {
                     if (Items[i].Quality > 0)
                     {
-                        if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
+                        if (Items[i].Name != GlobalConstants.ProductTypes.SULFURAS)
                         {
                             //added quality decreasing for "Conjured Nana Cake"
-                            if (Items[i].Name == "Conjured Mana Cake")
+                            if (Items[i].Name == GlobalConstants.ProductTypes.CONJURED)
                             {
                                 int newQuality = Items[i].Quality - 2;
                                 Items[i].Quality = Math.Max(0, newQuality);
@@ -65,7 +65,7 @@ namespace GildedRose.Console
                     {
                         Items[i].Quality = Items[i].Quality + 1;
 
-                        if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
+                        if (Items[i].Name == GlobalConstants.ProductTypes.BACKSTAGE_PASSES)
                         {
                             if (Items[i].SellIn < 11)
                             {
@@ -86,23 +86,23 @@ namespace GildedRose.Console
                     }
                 }
 
-                if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
+                if (Items[i].Name != GlobalConstants.ProductTypes.SULFURAS)
                 {
                     Items[i].SellIn = Items[i].SellIn - 1;
                 }
 
                 if (Items[i].SellIn < 0)
                 {
-                    if (Items[i].Name != "Aged Brie")
+                    if (Items[i].Name != GlobalConstants.ProductTypes.AGED_BRIE)
                     {
-                        if (Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
+                        if (Items[i].Name != GlobalConstants.ProductTypes.BACKSTAGE_PASSES)
                         {
                             if (Items[i].Quality > 0)
                             {
-                                if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
+                                if (Items[i].Name != GlobalConstants.ProductTypes.SULFURAS)
                                 {
                                     //added quality decreasing for "Conjured Nana Cake"
-                                    if (Items[i].Name == "Conjured Mana Cake")
+                                    if (Items[i].Name == GlobalConstants.ProductTypes.CONJURED)
                                     {
                                         int newQuality = Items[i].Quality - 2;
                                         Items[i].Quality = Math.Max(0, newQuality);

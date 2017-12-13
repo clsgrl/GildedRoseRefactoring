@@ -14,15 +14,11 @@ namespace GildedRose.Tests
         {
             Program program = getProgram();
 
-            program.Items = new List<Item> { new Item { Name = GENERIC_ITEM, SellIn = 0, Quality = 1 } };
-
-            System.Diagnostics.Trace.WriteLine("------------------ Testing assert 1");
+            program.Items = new List<Item> { new Item { Name = GlobalConstants.ProductTypes.DEXTERITY_VEST, SellIn = 0, Quality = 1 } };
 
             program.UpdateQuality();
 
             Item changedItem = program.Items[0];
-
-            System.Diagnostics.Trace.WriteLine("---------- Testing assert");
 
             Assert.Equal(0, changedItem.Quality);
             Assert.Equal(-1, changedItem.SellIn);
@@ -34,7 +30,7 @@ namespace GildedRose.Tests
         {
             Program program = getProgram();
             int initQuality = 2;
-            program.Items = new List<Item> { new Item { Name = GENERIC_ITEM, SellIn = -1, Quality = initQuality } };
+            program.Items = new List<Item> { new Item { Name = GlobalConstants.ProductTypes.DEXTERITY_VEST, SellIn = -1, Quality = initQuality } };
 
             program.UpdateQuality();
 
@@ -48,7 +44,7 @@ namespace GildedRose.Tests
         {
             Program program = getProgram();
 
-            program.Items = new List<Item> { new Item { Name = GENERIC_ITEM, SellIn = -1, Quality = 1 } };
+            program.Items = new List<Item> { new Item { Name = GlobalConstants.ProductTypes.DEXTERITY_VEST, SellIn = -1, Quality = 1 } };
 
             program.UpdateQuality();
 

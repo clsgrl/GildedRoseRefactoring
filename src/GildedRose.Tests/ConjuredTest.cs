@@ -11,7 +11,7 @@ namespace GildedRose.Tests
         {
             Program program = getProgram();
 
-            program.Items = new List<Item> { new Item { Name = CONJURED, SellIn = sellIn, Quality = initQuality } };
+            program.Items = new List<Item> { new Item { Name = GlobalConstants.ProductTypes.CONJURED, SellIn = sellIn, Quality = initQuality } };
 
             program.UpdateQuality();
 
