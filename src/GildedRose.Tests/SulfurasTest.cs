@@ -8,7 +8,7 @@ namespace GildedRose.Tests
     public class SulfurasTest : BaseTest
     {
         private int defaultSellin = 0;
-        private int defaultQuality = 80;
+        private int defaultQuality = GlobalConstants.Limits.MAX_QUALITY_SULFURAS;
 
         [Fact]
         public void QualityAndSellInNeverChange()
