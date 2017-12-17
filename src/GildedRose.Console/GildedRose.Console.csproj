@@ -43,9 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractUpdateStrategy.cs" />
+    <Compile Include="AgedBrieStrategy.cs" />
+    <Compile Include="BackstagePassStrategy.cs" />
+    <Compile Include="ConjuredItemStrategy.cs" />
+    <Compile Include="NormalItemStrategy.cs" />
     <Compile Include="GlobalConstants.cs" />
+    <Compile Include="IUpdateStrategy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StrategyFactory.cs" />
+    <Compile Include="SulfurasUpdateStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
