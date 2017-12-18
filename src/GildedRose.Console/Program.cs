@@ -33,6 +33,16 @@ namespace GildedRose.Console
             }
         }
 
+        private void PrintItems()
+        {
+            foreach (Item item in Items)
+            {
+                System.Console.WriteLine("Name: " + item.Name);
+                System.Console.WriteLine("SellIn: " + item.SellIn);
+                System.Console.WriteLine("Quality: " + item.Quality);
+            }
+        }
+
         static void Main(string[] args)
         {
             System.Console.WriteLine("OMGHAI!");
@@ -54,8 +64,11 @@ namespace GildedRose.Console
                                               new Item {Name = GlobalConstants.ProductTypes.CONJURED, SellIn = 3, Quality = 6}
                                           }
                           };
-
+            
             app.UpdateQuality();
+
+            System.Console.WriteLine("After update: ");
+            app.PrintItems();
 
             System.Console.ReadKey();
 
