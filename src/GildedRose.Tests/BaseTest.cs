@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using GildedRose.Console;
+﻿using GildedRose.Console;
 
 namespace GildedRose.Tests
 {
